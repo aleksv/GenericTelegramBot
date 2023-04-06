@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="debug">
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+		</Console>
+		<File name="file" fileName="bot.log"
+			filePattern="bot.%d{MM-dd-yyyy}.log.gz">
+			<PatternLayout
+				pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n" />
+			<TimeBasedTriggeringPolicy />
+		</File>
+	</Appenders>
+	<Loggers>
+		<Root level="debug" additivity="false">
+			<appender-ref ref="console" level="debug" />
+			<appender-ref ref="file" level="info" />
+		</Root>
+	</Loggers>
+</Configuration>
